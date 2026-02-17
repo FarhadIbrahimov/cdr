@@ -1,65 +1,101 @@
-import Image from "next/image";
+import ChatWidget from "./components/ChatWidget";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="site-shell">
+      <header className="topbar">
+        <p className="brand">Denver Custom Remodeling</p>
+        <a className="button button-secondary" href="/contact">
+          Book a Consult
+        </a>
+      </header>
+
+      <main>
+        <section className="hero">
+          <p className="eyebrow">Design. Build. Enjoy.</p>
+          <h1>Complete home remodeling built around how you actually live.</h1>
+          <p>
+            We provide home remodeling services, kitchen remodeling, bathroom
+            remodeling, basement remodeling, and flooring with quality finishes
+            that hold up to daily use.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <div className="actions">
+            <a className="button" href="#services">
+              Explore Services
+            </a>
+            <a className="button button-secondary" href="#portfolio">
+              View Portfolio
+            </a>
+          </div>
+        </section>
+
+        <section id="services" className="section">
+          <h2>What We Do</h2>
+          <div className="grid">
+            <article className="card">
+              <h3>Home Remodeling Services</h3>
+              <p>Full interior updates planned and delivered start to finish.</p>
+            </article>
+            <article className="card">
+              <h3>Kitchen Remodeling</h3>
+              <p>Functional layouts, cabinets, counters, lighting, and finishes.</p>
+            </article>
+            <article className="card">
+              <h3>Bathroom Remodeling</h3>
+              <p>Modern vanities, tile work, fixtures, and efficient layouts.</p>
+            </article>
+            <article className="card">
+              <h3>Basement Remodeling</h3>
+              <p>Transform unfinished basements into practical living spaces.</p>
+            </article>
+            <article className="card">
+              <h3>Flooring</h3>
+              <p>Durable flooring installation for kitchens, baths, and basements.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="portfolio" className="section">
+          <h2>Recent Projects</h2>
+          <div className="grid">
+            <article className="card">
+              <h3>Oak + White Transitional</h3>
+              <p>Warm oak lowers, white uppers, and quartz waterfall island.</p>
+            </article>
+            <article className="card">
+              <h3>Small Space Upgrade</h3>
+              <p>
+                Galley layout optimized with full-height pantry storage and
+                under-cabinet lighting.
+              </p>
+            </article>
+            <article className="card">
+              <h3>Family Chef Kitchen</h3>
+              <p>
+                Double ovens, oversized prep sink, and durable matte slab
+                cabinetry for daily heavy use.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="contact" className="section section-contact">
+          <h2>Let&apos;s Plan Your Remodel</h2>
+          <p>
+            Email{" "}
+            <a
+              href="mailto:denvercustomremodeling@gmail.com"
+              aria-label="Email Denver Custom Remodeling"
+              className="contact-link"
+            >
+              denvercustomremodeling@gmail.com
+            </a>{" "}
+            or call <a href="tel:+17204496824">(720) 449-6824</a> to schedule a
+            consultation.
+          </p>
+        </section>
       </main>
+      <ChatWidget />
     </div>
   );
 }
